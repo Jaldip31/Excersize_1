@@ -1,10 +1,11 @@
 //16. Write a JavaScript function to extract unique characters from a string.  Example string : "thequickbrownfoxjumpsoverthelazydog" Expected Output : "thequickbrownfxjmpsvlazydg
 
+//anonymous function
 var repeat1=function(str,q){
     return str.replaceAll(q,"");
 }
  console.log(repeat1("thequickbrownfoxjumpsoverthelazydog","e"));                                        //thquickbrownfoxjumpsovrthlazydog
-
+//arrow function
  var repeat2=(str,q)=>{
     return str.replaceAll(q,"");
 }

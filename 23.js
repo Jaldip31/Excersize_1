@@ -1,107 +1,88 @@
-// //23. Write a JavaScript function to find the first not repeated character.  Sample arguments : 'abacddbec' Expected output : 'e' 
-// var repeat=function(str){
-   
+//23. Write a JavaScript function to find the first not repeated character.  Sample arguments : 'abacddbec' Expected output : 'e' 
 
-//    for(i=0;i<str.length;i++){
-//       x=str[0]
-//       str=str.replace(str[0],"")
-
-//       if(str.search(x)==-1){}
-
-//       str=str.replaceAll(x,"")
-//       console.log(str)
-
-//    }
-// }
-
-// repeat("abacdedbc");
-
-// // str="abacdedbc"
-// // i=3
-// // if(str.includes(str[i])){
-
-// //    console.log("hello");
-
-// // }
-// // console.log(true==false)
-
-
-
-
-
-
-
-// // b=str.shift();
-// //       console.log(b)
-// //       console.log(str)
-// //       console.log(str.includes(b))
-// //       str.shift()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // n="abacdedbc"
-// // var repeat=function(n){
-// //     n=n.split("")
-// //     for(i=0;i<n.length;i++)
-// //     {
-// //         var count=0
-// //         for(j=0;j<n.length;j++)
-// //         {
-// //             if(n[i]==n[j])
-// //             {
-// //                 count++
-// //                 // console.log("hi")
-// //             }
-// //         }
-
-// //         if(count<2)
-// //         {
-// //             result = n[i];
-// //             break;
-// //         }
-// //     }
-// //         console.log(result);
-// //    }
-// // repeat("abacddbec")
-
-function find_firstNotRepeatedChar(str) {
-   let count = 0;
+// logic-1
+//anonymous function  
+var no_repeat1 = function (str) {
    let str2 = "";
-   for (let i = 0; i < str.length; i++) {
-      // console.log(str)
+   for (i = 0; i < str.length; i++) {
+      let count = 0;
       let index = str.indexOf(str[i], 0);
-      console.log(index)
-       while (index != -1) {
-           count++;
-           index = str.indexOf(str[i], index + 1);  
-       }
-       if(count === 1) {
-          str2 += str[i];
-          console.log(str2)
-       }
-       count=0;
-       
+      while (index != -1) {
+         count++;
+         index = str.indexOf(str[i], index + 1);
+      }
+      (count === 1) ? str2 += str[i] : 0;
    }
-   return str2[0];
+   return str2;
 }
-console.log(find_firstNotRepeatedChar('abacddbec'));
+console.log(no_repeat1('abacddbec'));                                            //e
 
-// console.log(0 != -1)
+//arrow function   
+var no_repeat2 = (str) => {
+   let str2 = "";
+   for (i = 0; i < str.length; i++) {
+      let count = 0;
+      let index = str.indexOf(str[i], 0);
+      while (index != -1) {
+         count++;
+         index = str.indexOf(str[i], index + 1);
+      }
+      (count === 1) ? str2 += str[i] : 0;
+   }
+   return str2;
+}
+console.log(no_repeat2('navagivan'));                                            //gi
+
+//call back function by anonymous    
+function no_repeat3(fun){
+   console.log("ans : ",fun);                                                    //ans :  [Function (anonymous)]
+   console.log(fun("xyabzyxzhab"))                                               //h
+}
+no_repeat3 (function (str) {
+   let str2 = "";
+   for (i = 0; i < str.length; i++) {
+      let count = 0;
+      let index = str.indexOf(str[i], 0);
+      while (index != -1) {
+         count++;
+         index = str.indexOf(str[i], index + 1);
+      }
+      (count === 1) ? str2 += str[i] : 0;
+   }
+   return str2;
+})
+
+//call back function by arrow
+function no_repeat4(fun){
+   console.log("ans : ",fun);                                                    //ans :  [Function (anonymous)]
+   console.log(fun("malayalam"))                                                 //y
+}
+no_repeat4 ((str)=> {
+   let str2 = "";
+   for (i = 0; i < str.length; i++) {
+      let count = 0;
+      let index = str.indexOf(str[i], 0);
+      while (index != -1) {
+         count++;
+         index = str.indexOf(str[i], index + 1);
+      }
+      (count === 1) ? str2 += str[i] : 0;
+   }
+   return str2;
+})
+
+//logic-2
+
+var repeat = function (str) {
+   let str2 = "";
+   for (i = 0; i < str.length; i++) {
+      var count = 0 ;
+      for (j = 0; j < str.length; j++)
+         (str[i] == str[j]) ? count++ : 0;
+      (count === 1) ? str2 += str[i] : 0;
+   }
+   return str2;
+}
+console.log(repeat("abacddbec"));                                                         //i
+
+
