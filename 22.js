@@ -48,6 +48,12 @@ repeat4 (function (str,q) {
 var repeat5 = (str, q) => str.split("").filter(ele => ele == q).length
 console.log(repeat5("abacddbec", "e"));                                                                  //1
 
-
+// extra
+var repeat1 = function (str,q) {
+    let count = 0 ;
+    str.split("").forEach(ele=>(q == ele) ? count++ : 0)
+        return count;
+}
+console.log(repeat1("abacddbec","e"));                                                                  // 1
 
 

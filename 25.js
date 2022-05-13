@@ -2,7 +2,7 @@
 //logic-1
 //anonymous function 
 var Longest_Country_Name1=function(str) {
-    return str.reduce(function (pv, cv) {
+    return str.reduce((pv, cv) => {
         return pv.length > cv.length ? pv : cv;
     }, "");
 }
@@ -39,16 +39,13 @@ Longest_Country_Name4((str)=> {
 })
 
 //logic-2
-var Longest_Country_Name = function (str)
-{
-    let max = -1
-    for (i = 0; i < str.length; i++) 
-    {
-        if (str[i].length > max) 
-            max = str[i].length
-            word = str[i]
-        
-    }
-    return word
+var Longest_Country_Name = function (str){
+    let max = -1;
+    str.forEach(ele=>{
+        if (ele.length > max) 
+        max = ele.length;
+        word = ele;
+    })
+    return word;
 }
-console.log(Longest_Country_Name(["Australia", "Germany","United states of america"]))
+console.log(Longest_Country_Name(["Australia", "Germany","United states of america"]));

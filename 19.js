@@ -83,3 +83,10 @@ function larger6(query) {
 }
 var result = [10, 4, 73, 58, 66, 92].filter(larger6(60));
 console.log(result);
+
+var larger1 = function (arr, n) {
+    let ans = [];
+        arr.forEach(ele=>(ele > n) ? ans.push(ele) : 0);
+    return ans;
+}
+console.log(larger1([10, 4, 73, 58, 66, 92], 50)); 

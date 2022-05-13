@@ -54,3 +54,15 @@ amount_to_coins4 (function(a,c){
     return ans;
 })
 
+//extra
+var amount_to_coins1 = function(a,c){
+    let ans=[];
+    c.forEach(i=>{
+        while(a>=i){
+            a=a-i;
+            ans.push(i);
+        }
+    })  
+    return ans;
+}
+console.log(amount_to_coins1(46,[25,10,5,2,1]))                                                             // [ 25, 10, 10, 1 ]

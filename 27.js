@@ -7,13 +7,7 @@ var test1 = function (str) {
         for (j = i + 1; j < str.length; j++) 
             str.slice(i, j) == str.slice(i, j).split("").reverse().join("")? arr.push(str.slice(i, j)): 0;
     }
-    var max = -1,ans;
-    for (i = 0; i < arr.length; i++) 
-        if (arr[i].length > max) {
-            max = arr[i].length;
-            ans = arr[i];
-        }
-    return ans;
+    return arr.reduce((pv,cv)=>pv.length>=cv.length?pv:cv,"")
 };
 console.log(test1("abracadabra"));                                                                                      //aca
 
@@ -24,13 +18,7 @@ var test2 = function (str) {
         for (j = i + 1; j < str.length; j++) 
             str.slice(i, j) == str.slice(i, j).split("").reverse().join("")? arr.push(str.slice(i, j)): 0;
     }
-    var max = -1,ans;
-    for (i = 0; i < arr.length; i++) 
-        if (arr[i].length > max) {
-            max = arr[i].length;
-            ans = arr[i];
-        }
-    return ans;
+    return arr.reduce((pv,cv)=>pv.length>=cv.length?pv:cv,"")
 };
 console.log(test2("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE"));                                            //12345678987654321
 
@@ -45,13 +33,7 @@ test3 (function (str) {
         for (j = i + 1; j < str.length; j++) 
             str.slice(i, j) == str.slice(i, j).split("").reverse().join("")? arr.push(str.slice(i, j)): 0;
     }
-    var max = -1,ans;
-    for (i = 0; i < arr.length; i++) 
-        if (arr[i].length > max) {
-            max = arr[i].length;
-            ans = arr[i];
-        }
-    return ans;
+    return arr.reduce((pv,cv)=>pv.length>=cv.length?pv:cv,"")
 });
 
 //call back function by anonymous 
@@ -65,11 +47,5 @@ test4 ((str) => {
         for (j = i + 1; j < str.length; j++) 
             str.slice(i, j) == str.slice(i, j).split("").reverse().join("")? arr.push(str.slice(i, j)): 0;
     }
-    var max = -1,ans;
-    for (i = 0; i < arr.length; i++) 
-        if (arr[i].length > max) {
-            max = arr[i].length;
-            ans = arr[i];
-        }
-    return ans;
+    return arr.reduce((pv,cv)=>pv.length>=cv.length?pv:cv,"")
 });

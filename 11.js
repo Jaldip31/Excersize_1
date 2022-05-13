@@ -45,3 +45,10 @@ secound4((arr)=>{
     arr.sort(compareNumbers);
     console.log(arr[arr.length-2],arr[1]);
 })
+
+//extra
+var secound1 = function (arr){
+    arr.sort((a,b)=>b-a);
+    return [arr[arr.length-2],arr[1]];
+}
+console.log(secound1([34,55,22,6,19,4444,67,90,3333]));                                          //19 3333
